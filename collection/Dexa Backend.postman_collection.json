@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "45d21f56-1f18-4721-b0ca-4ecfc7e24ecf",
+		"name": "Dexa Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24390610",
+		"_collection_link": "https://www.postman.com/neuron-mds1/workspace/dexa-backend/collection/24390610-45d21f56-1f18-4721-b0ca-4ecfc7e24ecf?action=share&source=collection_link&creator=24390610"
+	},
+	"item": [
+		{
+			"name": "Get Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl90ZXN0IiwiZW1haWwiOiJ1c2VyX3Rlc3RAeW9wbWFpbC5jb20iLCJyb2xlSWQiOjIsImlhdCI6MTcwOTU1MjQ1MCwiZXhwIjoxNzA5NTUyNDYwfQ.1qFoVkF5m81gVe1ui-mHu8dve5WKZbA5x9eqr7FX6kU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/role"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl9hZG1pbiIsImVtYWlsIjoidXNlcl9hZG1pbkB5b3BtYWlsLmNvbSIsInJvbGVJZCI6MSwiYWN0aXZlIjoxLCJpYXQiOjE3MDk1NTkzMTMsImV4cCI6MTcwOTU2MjkxM30.nfPmogYyXH-EA4EKU7PxJ98KZRAfFP3-A_gq0PlVivU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role_name\" : \"test\",\r\n    \"description\" : \"coba-coba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/role"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role_id\" : \"test 1\",\r\n    \"description\" : \"coba-coba update\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/role/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Role",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3001/role/67544"
+			},
+			"response": []
+		},
+		{
+			"name": "Registrasi User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"user_admin\",\r\n    \"email\" : \"user_admin@yopmail.com\",\r\n    \"password\" : \"admin123\",\r\n    \"confirmPassword\" : \"admin123\",\r\n    \"roleId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/user/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"user_admin@yopmail.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/user/refresh-token"
+			},
+			"response": []
+		},
+		{
+			"name": "Current User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl9hZG1pbiIsImVtYWlsIjoidXNlcl9hZG1pbkB5b3BtYWlsLmNvbSIsInJvbGVJZCI6MSwiYWN0aXZlIjoxLCJpYXQiOjE3MDk2MzIxMTYsImV4cCI6MTcwOTYzNTcxNn0.X2bK-JbnCaeviGG09I_rLni8U5nN9TQd7d2PvKIaKZs"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/user/current-user"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl9hZG1pbiIsImVtYWlsIjoidXNlcl9hZG1pbkB5b3BtYWlsLmNvbSIsInJvbGVJZCI6MSwiYWN0aXZlIjoxLCJpYXQiOjE3MDk2NDY1NzksImV4cCI6MTcwOTY1MDE3OX0.nAbjQGtdRUbbZ8daNFs6kkQK5TyVBiOqio00Lkq-9N4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/user/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl90ZXN0IiwiZW1haWwiOiJ1c2VyX3Rlc3RAeW9wbWFpbC5jb20iLCJyb2xlSWQiOjIsImFjdGl2ZSI6MSwiaWF0IjoxNzA5NjY4ODEwLCJleHAiOjE3MDk2NzI0MTB9.TnSEQoeoLs1jgf7AFdw4OjdWIJqluuyjJop38yFl_ig"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : 1,\r\n    \"date_time_attendance\" : \"3/6/2024, 3:14:41 AM\",\r\n    \"location_attendance\": \"-6.9383335,107.657059\",\r\n    \"photo_attendance\": \"data:image/jpeg;base64,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\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/user/attendance"
+			},
+			"response": []
+		},
+		{
+			"name": "List Attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl9hZG1pbiIsImVtYWlsIjoidXNlcl9hZG1pbkB5b3BtYWlsLmNvbSIsInJvbGVJZCI6MSwiYWN0aXZlIjoxLCJpYXQiOjE3MDk2NzM1MTQsImV4cCI6MTcwOTc1OTkxNH0.G2v05kKH-nXX_MggitIMrHpGszKTKDQ0SpvBDShSY90"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/user/list-attendance"
+			},
+			"response": []
+		},
+		{
+			"name": "List Employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl9hZG1pbiIsImVtYWlsIjoidXNlcl9hZG1pbkB5b3BtYWlsLmNvbSIsInJvbGVJZCI6MSwiYWN0aXZlIjoxLCJpYXQiOjE3MDk2NzUxMjEsImV4cCI6MTcwOTc2MTUyMX0.JrhBfP9mJA0RprgNEIGRFgyYdE-NJxuZkL9liAWXqVg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/user/list-employee"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcl9hZG1pbiIsImVtYWlsIjoidXNlcl9hZG1pbkB5b3BtYWlsLmNvbSIsInJvbGVJZCI6MSwiYWN0aXZlIjoxLCJpYXQiOjE3MDk2NzUxMjEsImV4cCI6MTcwOTc2MTUyMX0.JrhBfP9mJA0RprgNEIGRFgyYdE-NJxuZkL9liAWXqVg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : 3,\r\n    \"name\" : \"user_test23\",\r\n    \"position_id\" : 2,\r\n    \"department_id\" : 2,\r\n    \"email\" : \"user_test2@yopmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/user/3"
+			},
+			"response": []
+		}
+	]
+}
