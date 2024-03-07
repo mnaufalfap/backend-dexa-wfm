@@ -86,13 +86,13 @@ router.get(
 
 //Attendance
 router.post(
-  "/user/attendance",
+  "/attendance",
   Authorization.Authenticated,
   Authorization.Employee,
   AttendanceController.CreateAttendance
 );
 router.get(
-  "/user/list-attendance",
+  "/list-attendance",
   Authorization.Authenticated,
   Authorization.Admin,
   AttendanceController.ListAttendance

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Helper from "../helpers/Helper";
 import Attendance from "../models/Attendance";
+import User from "../models/User";
 
 const CreateAttendance = async (
   req: Request,
@@ -54,7 +55,12 @@ const ListAttendance = async (
   res: Response
 ): Promise<Response> => {
   try {
-    const attendance = await Attendance.findAll();
+    const attendance = await Attendance.findAll({
+      include: {
+        model: User,
+        attributes: ["user_id", "name"],
+      },
+    });
     return res.status(200).send({
       status: 200,
       message: "OK",
